@@ -64,31 +64,33 @@ def get_teletext_json(url):
     global pages
     global json_teletext
 
-    print_verbose("Downloading teletext...")
+    # loading from file
     if args.input:
+        print_verbose("Fetching teletext from file...")
         try:
             json_text = load_teletext_json(args.input)
         except Exception as e:
             print("Error: ", e)
             sys.exit(1)
-
+    # downloading from url
     else:
+        print_verbose("Downloading teletext from url...")
         try:
             json_text = requests.get(url).text
         except requests.exceptions.RequestException as e:
             print(f"Error: There was error accessing a \"{URL}\"! More info: \n{e}")
             sys.exit(1)
 
-    print_verbose("Converting json...")
+    print_verbose("Converting json to python dictionary...")
     try:
-        # convert json to directory format
+        # convert json to dictionary format
         json_teletext = json.loads(json_text)
     except json.decoder.JSONDecodeError as e:
         print(f"Error: Downloaded teletext from \"{URL}\" is not in valid JSON format! More info: \n{e}", file=sys.stderr)
         sys.exit(1)
     
     if args.output:
-        output_teletext_json(args.output, r.text)
+        output_teletext_json(args.output, json_text)
     
     pages = list(json_teletext["data"].keys())
 

@@ -39,3 +39,8 @@ The following options are available:
 - `-g` / `--search`: Search for specific word in all pages.
 - `-n` / `--no-color`: Disable color and formating in output.
 - `-v` / `--verbose`: Explain what is being done.
+
+## Screenshots
+
+![Screenshot1](https://github.com/motuzj/ct-teletext-viewer/assets/30744041/03e30014-d6ea-4ee2-8e75-2e465ddc1906)
+![Screenshot2](https://github.com/motuzj/ct-teletext-viewer/assets/30744041/67be360c-5cf1-4b3a-94ae-ad78606890db)
