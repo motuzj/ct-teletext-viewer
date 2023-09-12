@@ -184,36 +184,42 @@ def print_menu(current_page):
 
 init(autoreset=True) # colorama init
 
-# default values
-current_page = "100"
-current_subpage = ''
+def main():
+    global current_page
+    global current_subpage
 
-parse_args()
-get_teletext_json(URL) # load teletext from URL
+    # default values
+    current_page = "100"
+    current_subpage = ''
 
-while True:
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-    print(get_teletext_page(current_page))
-    
-    print_verbose("Displaying navigation menu...")
-    print_menu(current_page)
-
-    # get valid input
+    parse_args()
+    get_teletext_json(URL) # load teletext from URL
     while True:
-        print_verbose("Waiting for user input...")
-        user_input = input("Page or Subpage: ")
+        os.system('cls' if os.name == 'nt' else 'clear')
 
-        current_subpage = '' # clear current subpage
+        print(get_teletext_page(current_page))
+        
+        print_verbose("Displaying navigation menu...")
+        print_menu(current_page)
 
-        if not user_input.isalnum():
-            print("Input is not alphanumeric. Please try again.")
-            continue
+        # get valid input
+        while True:
+            print_verbose("Waiting for user input...")
+            user_input = input("Page or Subpage: ")
 
-        if user_input.isnumeric():
-            current_page = user_input
-        else:
-            current_subpage = user_input.capitalize()
-        break
+            current_subpage = '' # clear current subpage
 
-deinit()
+            if not user_input.isalnum():
+                print("Input is not alphanumeric. Please try again.")
+                continue
+
+            if user_input.isnumeric():
+                current_page = user_input
+            else:
+                current_subpage = user_input.capitalize()
+            break
+
+    deinit()
+
+if __name__ == "__main__":
+    main()

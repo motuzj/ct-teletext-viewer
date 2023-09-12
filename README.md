@@ -1,31 +1,30 @@
 # ČT Teletext Viewer
 
-ČT Teletext Viewer allows you to view teletext content in your terminal.
+ČT Teletext Viewer allows you to view teletext content in your terminal. It supports interactive mode and the use of options.
+
+## Installing
+
+### Linux
+
+You can install this package on Linux by running this command in your terminal:
+
+```bash
+python3 -m pip install git+https://github.com/motuzj/ct-teletext-viewer
+```
+
+If you are getting `error: externally-managed-environment`, you can install it using [pipx](https://github.com/pypa/pipx) or alternatively you can try adding the `--break-system-packages` switch to the end of the command.
+
+### Windows
+
+You can install this package on Linux by using:
+
+```bash
+python -m pip install git+https://github.com/motuzj/ct-teletext-viewer
+```
 
 ## Usage
 
-1. Clone or download this repository.
-2. Navigate to the project directory using terminal.
-3. Make sure you have Python 3 installed.
-4. Install required packages by running following command:
-
-    ```shell
-    pip install -r requirements.txt
-    ```
-
-5. Run the viewer
-
-    On Windows:
-
-    ```shell
-    python ct-teletext.py
-    ```
-
-    On Linux:
-
-    ```shell
-    python3 ct-teletext.py
-    ```
+Once you have successfully installed the ČT Teletext Viewer, you can lunch it at any time by executing `ct-teletext` (assuming you've correctly set the PATH). By default the program opens interactive mode. Here you can easily navigate through the teletext using numbers (for pages) or letters (for subpages).
 
 ## Options
 

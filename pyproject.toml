@@ -1,0 +1,21 @@
+[project]
+name = "ct-teletext"
+version = "0.1"
+description = "Viewer for Česká Televize (ČT) teletext"
+readme = "README.md"
+requires-python = ">=3"
+license = {file = "LICENSE.txt"}
+
+dependencies = [
+  "colorama",
+  "requests"
+]
+
+[project.scripts]
+ct-teletext = "ct_teletext:main"
+
+[tool.setuptools]
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
