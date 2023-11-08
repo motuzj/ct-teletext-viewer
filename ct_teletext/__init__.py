@@ -6,7 +6,7 @@ import os
 import re
 from colorama import init, deinit, Fore, Style
 
-VERSION = 0.2
+VERSION = "0.2.1"
 URL = "https://www.ceskatelevize.cz/teletext-api/v2/text/" # url of json teletext file
 DEFAULT_PAGE = "100"
 
@@ -176,7 +176,7 @@ class CTTeletextViewer:
         if self.subpages:
             for subpage in self.subpages:
                 if subpage == self.current_subpage: # print current subpage in color
-                    print(f"{Fore.LIGHTBLACK_EX}{subpage:^3}", end=" ")
+                    print(f"{Fore.LIGHTBLACK_EX}{subpage:^3}{Style.RESET_ALL}", end=" ")
                 else:
                     print(f"{subpage:^3}", end=" ")
         print()
