@@ -119,17 +119,17 @@ class CTTeletextViewer:
 
         if subpage is None: # true if no page was provided
             try:
-                subpages = self.json_teletext["data"][page_num]["subpages"]
+                self.subpages = self.json_teletext["data"][page_num]["subpages"]
             except KeyError:
                 print(f"Page {page_num} doesn't exist. Try going to page {DEFAULT_PAGE}.")
                 return " "
 
-            if not subpages:
+            if not self.subpages:
                 # page doesn't have any subpages, print the only page
                 return self.get_teletext_page(page_num, "")
             else:
                 if len(self.current_subpage) <= 0:
-                    self.current_subpage = subpages[0] # set subpage to first subpage from list
+                    self.current_subpage = self.subpages[0] # set subpage to first subpage from list
                 self.print_verbose(f"No subpage provided, printing default {self.current_subpage} subpage.")
                 return self.get_teletext_page(page_num, self.current_subpage)
         else:
@@ -199,7 +199,7 @@ class CTTeletextViewer:
         print("Pages:          ", end="")
         for near_page in near_pages:
             if index == near_page:  # print current page in color
-                print(f"{Fore.LIGHTBLACK_EX}{self.pages[near_page]}", end=" ")
+                print(f"{Fore.LIGHTBLACK_EX}{self.pages[near_page]}{Style.RESET_ALL}", end=" ")
             else:
                 print(self.pages[near_page], end=" ")
         print()
