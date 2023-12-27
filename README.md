@@ -1,6 +1,6 @@
 # ČT Teletext Viewer
 
-ČT Teletext Viewer allows you to view teletext content in your terminal. It supports interactive mode and the use of options.
+ČT Teletext Viewer allows you to view teletext content interactively in your terminal.
 
 ## Installing
 
@@ -16,7 +16,7 @@ If you are getting `error: externally-managed-environment`, you can install it u
 
 ### Windows
 
-You can install this package on Linux by using:
+On Windows you can install this package using this command, be sure you have [Python](https://www.python.org/downloads/) installed first:
 
 ```bash
 python -m pip install git+https://github.com/motuzj/ct-teletext-viewer
@@ -31,13 +31,14 @@ Once you have successfully installed the ČT Teletext Viewer, you can lunch it a
 The following options are available:
 
 - `-h` / `--help`: Show this help message and exit.
-- `-p` / `--page`: Go to a specific page.
-- `-s` / `--subpage`: Go to a specific subpage.
-- `-o` / `--output`: Download whole json teletext for later use and exit.
-- `-i` / `--input`: Load json teletext from file.
-- `-g` / `--search`: Search for specific word in all pages.
+- `-p PAGE` / `--page PAGE`: Print a specific page and exit.
+- `-s SUBPAGE` / `--subpage SUBPAGE`: Print a specific page with subpage and exit, -p option is need for this.
+- `-o FILE` / `--output FILE`: Download whole JSON teletext for later use and exit.
+- `-i FILE` / `--input FILE`: Load JSON teletext from file.
+- `-g WORD` / `--search WORD`: Search for specific word in all pages and it's subpages (case-sensitive)
 - `-n` / `--no-color`: Disable color and formating in output.
-- `-v` / `--verbose`: Explain what is being done.
+- `-V` / `--verbose`: Explain what is being done.
+- `-v` / `--version`: Show program's version number and exit.
 
 ## Screenshots
 
