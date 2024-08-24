@@ -6,8 +6,8 @@ import os
 import re
 from colorama import init, deinit, Fore, Style
 
-VERSION = "0.2.2"
-URL = "https://www.ceskatelevize.cz/teletext-api/v2/text/" # url of json teletext file
+VERSION = "0.2.3"
+URL = "https://api-teletext.ceskatelevize.cz/teletext-api/v2/text/" # url of json teletext file
 DEFAULT_PAGE = "100"
 
 class CTTeletextViewer:
